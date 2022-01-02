@@ -1,6 +1,8 @@
 package com.github.SarahTumenas.springwebmvc.controller;
 
 import com.github.SarahTumenas.springwebmvc.model.Jedi;
+import com.github.SarahTumenas.springwebmvc.repository.JediRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -10,16 +12,19 @@ import java.util.List;
 @Controller
 public class JediController {
 
+    @Autowired
+    private JediRepository repository;
+
     @GetMapping ("/jedi")
     public ModelAndView jedi(){
         final ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("jedi");
 
-        final Jedi luke =new Jedi("Luke", "Skywalker");
-        modelAndView.addObject("allJedi", List.of(luke));
+        modelAndView.addObject("allJedi", repository.getAllJedi());
 
         return modelAndView;
     }
+
     @GetMapping ("/new-jedi")
     public ModelAndView newJedi (){
         final ModelAndView modelAndView = new ModelAndView();
