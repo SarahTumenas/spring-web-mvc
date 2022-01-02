@@ -1,32 +1,39 @@
 package com.github.SarahTumenas.springwebmvc.model;
 
+
+import org.springframework.lang.NonNull;
+
 public class Jedi {
+
+
     private String name;
+
     private String lastName;
 
-    public Jedi( final String name,final String lastName) {
-        this.name =name;
+    public Jedi (final String name, final String lastName) {
+        this.name = name;
         this.lastName = lastName;
     }
 
-    public Jedi() {
+    public Jedi () {
+
 
     }
 
-
-    public String getName() {
+    public String getName () {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName (final String name) {
         this.name = name;
     }
 
-    public String getLastName() {
+    public String getLastName () {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName (final String lastName) {
         this.lastName = lastName;
     }
+
 }
