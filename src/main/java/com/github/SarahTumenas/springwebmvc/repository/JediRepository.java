@@ -15,6 +15,8 @@ public class JediRepository {
         jedi = new ArrayList<>();
 
         jedi.add(new Jedi("Luke", "Skywalker"));
+        jedi.add(new Jedi("Obi-Wan", "Kenobi"));
+        jedi.add(new Jedi("Qui-Gon", "Jinn"));
     }
 
     public List <Jedi> getAllJedi (){
